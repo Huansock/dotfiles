@@ -4,24 +4,18 @@
 
 local gh = function(x) return 'https://github.com/' .. x end
 
-vim.pack.add{
+vim.pack.add({
+  -- lsp 설정 파일
   gh('neovim/nvim-lspconfig') ,
-}
+  -- coq 자동완성
+  { src = gh("ms-jpq/coq_nvim") , version = 'coq'},
+  { src = gh("ms-jpq/coq.artifacts") , version = 'artifacts'},
+  { src = gh("ms-jpq/coq.thirdparty") , version = '3p'},
+  
+})
 
-local function smart_tab()
-  if vim.fn.pumvisible() == 1 then
-    return '<C-n>'
-  end
+vim.g.coq_settings = {}
 
-  local col = vim.fn.col('.') - 1
-  local line = vim.fn.getline('.')
+require('coq')
 
-  if col == 0 or string.match(string.sub(tostring(line), col, col), '%s') then
-    return '<Tab>'
-  end
-
-  return '<C-x><C-o>'
-end
-
-vim.keymap.set('i', '<Tab>', smart_tab, { expr = true, replace_keycodes = true })
 
