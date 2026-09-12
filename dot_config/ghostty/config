@@ -1,2 +1,3 @@
 font-family = D2Coding
+notify-on-command-finish = unfocused
 font-size = 18

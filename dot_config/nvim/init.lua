@@ -8,7 +8,6 @@ vim.pack.add({
   { src = "https://github.com/ms-jpq/coq.thirdparty" , version = '3p'},
   "https://github.com/nvim-treesitter/nvim-treesitter",
   {src = "https://github.com/catppuccin/nvim", name = "catppuccin"}
-  
 })
 
 vim.g.coq_settings = {}
