@@ -1,4 +1,7 @@
 
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
 vim.pack.add({
 	'https://github.com/neovim/nvim-lspconfig',
 	"https://github.com/nvim-treesitter/nvim-treesitter",
@@ -31,7 +34,7 @@ require('keymaps')
 
 FzfLua.register_ui_select({
 	winopts = {
-		height = 0.33, -- 너무 크게 뜨지 않고 화면의 1/3 크기만 사용
+		height = 0.33,
 		width = 0.50
 	}
 })
