@@ -12,7 +12,9 @@ vim.pack.add({
 	{ src = 'https://github.com/ms-jpq/coq_nvim', version = 'coq' },
 	{ src = 'https://github.com/ms-jpq/coq.artifacts', version = 'artifacts' },
 	{ src = 'https://github.com/ms-jpq/coq.thirdparty', version = '3p' },
-	'https://github.com/ibhagwan/fzf-lua.git'
+	'https://github.com/ibhagwan/fzf-lua.git',
+	'https://github.com/mason-org/mason.nvim.git',
+	'https://github.com/mason-org/mason-lspconfig.nvim.git'
 })
 
 vim.cmd("colorscheme catppuccin-frappe")
@@ -58,5 +60,5 @@ starter.setup({
 	},
 })
 
-
-
+require("mason").setup()
+require("mason-lspconfig").setup()
